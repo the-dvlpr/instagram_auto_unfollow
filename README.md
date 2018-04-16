@@ -7,6 +7,12 @@ $ gem install 'watir'
 $ gem install 'colorize'
 ```
 
+Install chromedriver if you don't already have it
+```
+# On macOS use homebrew
+$ brew cask install chromedriver
+```
+
 Run script
 ```
 $ ruby auto_unfollow.rb
