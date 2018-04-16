@@ -7,8 +7,9 @@ $ bundle install
 ```
 
 Install chromedriver if you don't already have it
+
+MacOS
 ```
-# On macOS use homebrew
 $ brew cask install chromedriver
 ```
 
