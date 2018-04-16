@@ -93,7 +93,7 @@ while true do
     end
   end
   puts "-".yellow * 30
-  puts "Succesfully unfolowed a total of " + "#{starting_following_counter - current_following_counter}".cyan + " and have " + "#{current_following_counter}".cyan + " remaining."
+  puts "Succesfully unfolowed a total of " + "#{starting_following_counter - current_following_counter}".cyan + " and have " + "#{b.element(class: '_t98z6', index: 2).text.gsub(',', '').to_i}".cyan + " remaining."
   puts "-".yellow * 30
   flag = true
 end
