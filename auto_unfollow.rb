@@ -2,19 +2,17 @@ require 'watir'
 require 'colorize'
 require 'io/console'
 
+unfollow_counter = 0
+starting_following_counter = 0
+current_following_counter = 0
+unfollows_per_hour = 100
+whitelist = [] # Array of username strings you don't want to unfollow
+
 print "Enter Username:".black.on_white + " "
 username = gets.chomp
 print "Enter Password: ".black.on_white + " "
 password = STDIN.noecho(&:gets).chomp
 puts ""
-
-
-unfollow_counter = 0
-starting_following_counter = 0
-current_following_counter = 0
-unfollows_per_hour = 100
-# Array of username strings you don't want to unfollow
-whitelist = []
 
 # Open Browser, Navigate to Login page
 b = Watir::Browser.new :chrome, headless: true
