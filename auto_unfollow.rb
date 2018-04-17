@@ -10,7 +10,7 @@ whitelist = [] # Array of username strings you don't want to unfollow
 
 print "Enter Username:".black.on_white + " "
 username = gets.chomp
-print "Enter Password: ".black.on_white + " "
+print "Enter Password:".black.on_white + " "
 password = STDIN.noecho(&:gets).chomp
 puts ""
 
@@ -26,11 +26,12 @@ begin
 
   # Click log in button
   b.button(class: '_njrw0').click
+  sleep(2)
+  # If there's still a log in button after attempting to log in then it was unsuccessful.
+  raise if b.button(class: '_njrw0').exists?
 rescue
-  puts "Unable to log you in. Check your password and ensure you have two-step authentication off in your instagram settings.".red
-  abort
+  abort("Unable to log you in. Check your password and ensure you have two-step authentication off in your instagram settings.".red)
 end
-sleep(2)
 puts "Okay, we're in.".green
 
 
@@ -86,7 +87,7 @@ while true do
       end
 
        # Seconds in an hour / number of unfollows.
-       # If 150, 1 unfollow every 24 seconds. Don't exceed 150 (IG's rate limit)
+       # If 100, 1 unfollow every 36 seconds. Don't exceed 100 (IG's rate limit)
       sleep(60 * 60 / unfollows_per_hour)
     end
   end
